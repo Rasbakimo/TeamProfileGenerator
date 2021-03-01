@@ -1,6 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
+const writeFileAsync = util.promisify(fs.writeFile);
+
 
 
 function promptUser() {
@@ -48,26 +50,15 @@ function promptUser() {
         name: 'contributing',
         default: "Read the doc for inquirer on the npm website to see the different types of inputs. once you're done, use git workflow to push your contributoins"
     },
-    {
-        type: 'input',
-        message: "Here's how to test the app.",
-        name: 'tests',
-        default:" Run it and use the terminal's console to check for errors."
-    },
-    {
-        type: 'list',
-        message: "Please select a license for your project.",
-        choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
-        name: 'license'
-    }
+  
     
 ]); 
 }
 promptUser()
   .then(function(userResponse) {
-    const markdown = generateMarkdown(userResponse);
+    const html = generateMarkdown(userResponse);
 
-    return writeFileAsync("READ.MD", markdown);
+    return writeFileAsync("index.html", html);
   })
   .then(function() {
     console.log("Success check the folder");
