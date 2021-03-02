@@ -1,3 +1,4 @@
+
 const inquirer = require("inquirer");
 const fs = require("fs");
 const style = require("./templates/css")
@@ -10,10 +11,10 @@ const Intern = require("./lib/intern")
 let finalTeamArray = [];
 
 
-function init (){
+function startingPrompt() {
     inquirer.prompt([
         {
-            message: "/////////Welcome to Team Generator 5000! Please write your team name://///////",
+            message: "Please create your team name:",
             name: "teamname"
         }
     ])
@@ -29,17 +30,17 @@ function init (){
 function addManager() {
     inquirer.prompt([
         {
-            message: "What is your team manager's name?",
+            message: " Team manager's name?",
             name: "name"
         },
         {
-            message: "What is your team manager's email address?",
+            message: " Email address?",
             name: "email"
         },
 
         {
             type: "number",
-            message: "What is your team manager's office number?",
+            message: " Office number?",
             name: "officeNumber"
         },
     ])
@@ -60,8 +61,8 @@ function addTeamMembers() {
     inquirer.prompt([
         {
             type: "list",
-            message: "Would you like to add more team members?",
-            choices: ["Yes, add an engineer", "Yes, add an intern", "No, my team is complete"],
+            message: "Do you require anymore positions?",
+            choices: ["Yes, add an engineer", "Yes, add an intern", "No, team is complete"],
             name: "addMemberData"
         }
     ])
@@ -76,7 +77,7 @@ function addTeamMembers() {
                 case "Yes, add an intern":
                     addIntern();
                     break;
-                case "No, my team is complete":
+                case "No, team is complete":
                     compileTeam();
                     break;
             }
@@ -86,15 +87,15 @@ function addTeamMembers() {
 function addEngineer() {
     inquirer.prompt([
         {
-            message: "What is this engineer's name?",
+            message: " Engineer's name?",
             name: "name"
         },
         {
-            message: "What is this engineer's email address?",
+            message: " Email address?",
             name: "email"
         },
         {
-            message: "What is this engineer's Github profile?",
+            message: " Github profile?",
             name: "github"
         }
     ])
@@ -114,15 +115,15 @@ function addEngineer() {
 function addIntern() {
     inquirer.prompt([
         {
-            message: "What is this intern's name?",
+            message: " Intern's name?",
             name: "name"
         },
         {
-            message: "What is this intern's email address?",
+            message: " Email address?",
             name: "email"
         },
         {
-            message: "What is this intern's school?",
+            message: " School attended?",
             name: "school"
         }
     ])
@@ -140,7 +141,7 @@ function addIntern() {
 };
 
 function compileTeam() {
-    console.log(" Alright team let's give it our all!")
+    console.log("Alright, good choices captain!")
 
     const htmlArray = []
     const htmlBeginning = `
@@ -209,4 +210,4 @@ function compileTeam() {
     })
 }
 
-init()
+startingPrompt()
