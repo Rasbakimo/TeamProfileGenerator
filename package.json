@@ -21,9 +21,11 @@
   },
   "homepage": "https://github.com/Rasbakimo/TeamProfileGenerator#readme",
   "dependencies": {
-    "inquirer": "^6.3.1"
+    "app": "^0.1.0",
+    "inquirer": "^6.5.2",
+    "start": "^5.1.0"
   },
   "devDependencies": {
-    "jest": "^24.8.0"
+    "jest": "^24.9.0"
   }
 }

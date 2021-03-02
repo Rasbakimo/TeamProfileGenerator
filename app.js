@@ -3,7 +3,6 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const style = require("./templates/css")
 
-const Employee = require("./lib/employee")
 const Engineer = require("./lib/engineer")
 const Manager = require("./lib/manager")
 const Intern = require("./lib/intern")
@@ -18,36 +17,45 @@ function startingPrompt() {
             name: "teamname"
         }
     ])
-        .then(function(data){
+        .then(function (data) {
             const teamName = data.teamname
             finalTeamArray.push(teamName)
             addManager();
         })
 
-    
+
 }
 
 function addManager() {
     inquirer.prompt([
         {
             message: " Team manager's name?",
-            name: "name"
+            name: "name",
+            default: "Some Name"
+        },
+        {
+            message: " Id number?",
+            name:"id",
+            default: "000"
+
         },
         {
             message: " Email address?",
-            name: "email"
+            name: "email",
+            default: "here@there"
         },
 
         {
             type: "number",
             message: " Office number?",
-            name: "officeNumber"
+            name: "officeNumber",
+            default: "555 555 5556"
         },
     ])
 
         .then(function (data) {
             const name = data.name
-            const id = 1
+            const id = data.id
             const email = data.email
             const officeNumber = data.officeNumber
             const teamMember = new Manager(name, id, email, officeNumber)
@@ -88,21 +96,30 @@ function addEngineer() {
     inquirer.prompt([
         {
             message: " Engineer's name?",
-            name: "name"
+            name: "name",
+            default:"Mike Jones"
+        },
+        {
+            message: " Id number?",
+            name:"id",
+            default: "000"
+
         },
         {
             message: " Email address?",
-            name: "email"
+            name: "email",
+            default: "mjones@shishahouse"
         },
         {
             message: " Github profile?",
-            name: "github"
+            name: "github",
+            default: "whoMikeJones"
         }
     ])
 
         .then(function (data) {
             const name = data.name
-            const id = finalTeamArray.length + 1
+            const id = data.id
             const email = data.email
             const github = data.github
             const teamMember = new Engineer(name, id, email, github)
@@ -116,21 +133,30 @@ function addIntern() {
     inquirer.prompt([
         {
             message: " Intern's name?",
-            name: "name"
+            name: "name",
+            default: "Alisha"
+        },
+        {
+            message: " Id number?",
+            name:"id",
+            default: "000"
+
         },
         {
             message: " Email address?",
-            name: "email"
+            name: "email",
+            default: "there@here"
         },
         {
             message: " School attended?",
-            name: "school"
+            name: "school",
+            default:"Stankonia U"
         }
     ])
 
         .then(function (data) {
             const name = data.name
-            const id = finalTeamArray.length + 1
+            const id = data.id
             const email = data.email
             const school = data.school
             const teamMember = new Intern(name, id, email, school)
@@ -206,7 +232,7 @@ function compileTeam() {
     htmlArray.push(htmlEnd);
 
     fs.writeFile(`./generated-html/${finalTeamArray[0]}.html`, htmlArray.join(""), function (err) {
-        
+
     })
 }
 

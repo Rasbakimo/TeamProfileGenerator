@@ -9,7 +9,7 @@ body {
     align-items: center;
 }
 .banner-bar {
-    background-color: rgba(53, 124, 109, 0.842);
+    background-color: rgba(1, 20, 16, 0.842);
     width: 100%;
     color: #ffffff;
     display: flex;
@@ -18,11 +18,11 @@ body {
     height: 20vh;
 }
 h1 {
-    font-family: Bebas Neue;
+    font-family: system-ui;;
     font-size: 8vw;
 }
 p {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
     position: relative;
     left: 12px;
 }
@@ -49,8 +49,8 @@ h2 {
     width: 60vw;
 }
 .card-top {
-    background-color: rgb(228, 174, 76);
-    border: 2px solid rgb(228, 174, 76);
+    background-color: rgb(241, 76, 7);
+    border: 2px solid rgb(22, 16, 3);
     width: 246px;
     border-top-left-radius: 10px;
 }
