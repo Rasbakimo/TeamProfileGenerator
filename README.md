@@ -27,7 +27,8 @@
   
   * Instructions and demo:
 
-   ![screenshot](    )
+    ![screenshot](https://github.com/Rasbakimo/TeamProfileGenerator/blob/master/assets/testscreenshot.png)
+   
    
    
    [https://drive.google.com/file/d/1a4aneb9ZFi6W1c6PEmowVOIGC22ptjPE/view]
