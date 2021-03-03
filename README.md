@@ -1,5 +1,5 @@
-# README Template 
-  ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/Rasbakimo/TeamProfileGenerator?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/Rasbakimo/undefined?style=flat&logo=appveyor)
+# Team Profile Generator 
+  ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/Rasbakimo/TeamProfileGenerator ?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/Rasbakimo/undefined?style=flat&logo=appveyor)
   
   Check out the badges hosted by [shields.io](https://shields.io/).
   
